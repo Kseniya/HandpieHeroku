@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(params[:post].permit(:title, :text))
-    @post.date = Time.now;
+    @post.created_at = Time.now;
  
     if @post.save
         redirect_to @post
